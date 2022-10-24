@@ -20,11 +20,11 @@ while 1:
         file = open('documents/' + filename)
         data = bytes(file.read(), 'utf-8')
 
-        connectionSocket.send(b'File located')
+        connectionSocket.send(b'File located\n')
         connectionSocket.send(data)
 
     except IOError:
-        connectionSocket.send(b'404 Not Found')
+        connectionSocket.send(b'404 Not Found\n')
     
     connectionSocket.close()
     
